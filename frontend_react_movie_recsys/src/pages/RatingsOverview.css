@@ -1,0 +1,458 @@
+/* ============================================ */
+/* 전체 페이지 */
+/* ============================================ */
+
+.ratings-page {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 32px 0 70px;
+
+  color: #ffffff;
+}
+
+
+/* ============================================ */
+/* 상단 제목 */
+/* ============================================ */
+
+.ratings-header {
+  margin-bottom: 32px;
+}
+
+
+.ratings-small-title {
+  margin: 0 0 8px;
+
+  color: #e50914;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.ratings-header h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 34px;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+
+.ratings-description {
+  margin: 12px 0 0;
+
+  color: #999999;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* ============================================ */
+/* 전체 테이블 */
+/* ============================================ */
+
+.ratings-table {
+  width: 100%;
+
+  overflow: hidden;
+
+  background-color: #101010;
+
+  border: 1px solid #292929;
+
+  border-radius: 14px;
+}
+
+
+/* ============================================ */
+/* 테이블 헤더 */
+/* ============================================ */
+
+.ratings-table-header {
+  display: grid;
+
+  grid-template-columns:
+    300px
+    minmax(300px, 1fr)
+    280px;
+
+  align-items: center;
+
+  min-height: 48px;
+
+  padding: 0 22px;
+
+  background-color: #151515;
+
+  border-bottom: 1px solid #292929;
+
+  color: #777777;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* ============================================ */
+/* 테이블 한 줄 */
+/* ============================================ */
+
+.ratings-table-row {
+  display: grid;
+
+  grid-template-columns:
+    300px
+    minmax(300px, 1fr)
+    280px;
+
+  align-items: center;
+
+  min-height: 78px;
+
+  padding: 0 22px;
+
+  border-bottom: 1px solid #252525;
+
+  transition: background-color 0.2s;
+}
+
+
+.ratings-table-row:last-child {
+  border-bottom: none;
+}
+
+
+.ratings-table-row:hover {
+  background-color: #151515;
+}
+
+
+/* ============================================ */
+/* 사용자 */
+/* ============================================ */
+
+.ratings-user-cell {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+}
+
+
+.ratings-user-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: #242424;
+
+  border-radius: 10px;
+
+  font-size: 17px;
+
+  filter: grayscale(1);
+}
+
+
+.ratings-user-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+
+.ratings-user-text strong {
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.ratings-user-text span {
+  color: #555555;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+/* ============================================ */
+/* 영화 */
+/* ============================================ */
+
+.ratings-movie-cell {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+
+.ratings-movie-cell strong {
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.ratings-movie-cell span {
+  color: #555555;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+/* ============================================ */
+/* 평점 */
+/* ============================================ */
+
+.ratings-score-cell {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+/* ============================================ */
+/* 소수점 별점 */
+/* ============================================ */
+
+.fraction-star-list {
+  display: flex;
+
+  align-items: center;
+
+  gap: 2px;
+
+  flex-shrink: 0;
+}
+
+
+/* 별 하나 */
+
+.fraction-star {
+  position: relative;
+
+  display: inline-block;
+
+  width: 20px;
+  height: 24px;
+
+  font-size: 20px;
+
+  line-height: 24px;
+}
+
+
+/* 뒤쪽 회색 별 */
+
+.fraction-star-base {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  display: block;
+
+  width: 20px;
+  height: 24px;
+
+  color: #383838;
+
+  line-height: 24px;
+}
+
+
+/* 노란색 영역 */
+
+.fraction-star-fill {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  display: block;
+
+  height: 24px;
+
+  overflow: hidden;
+
+  color: #ffd21c;
+
+  line-height: 24px;
+
+  white-space: nowrap;
+}
+
+
+/*
+중요:
+부모 fraction-star-fill의 width만 잘라내고
+실제 별 자체의 크기는 항상 20px로 유지한다.
+
+그래야 4.5점일 때 별 모양 자체가
+찌그러지지 않고 정확히 절반만 보인다.
+*/
+
+.fraction-star-symbol {
+  display: block;
+
+  width: 20px;
+  height: 24px;
+
+  line-height: 24px;
+}
+
+
+/* ============================================ */
+/* 숫자 평점 */
+/* ============================================ */
+
+.ratings-score-number {
+  min-width: 70px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================ */
+/* 메시지 */
+/* ============================================ */
+
+.ratings-message,
+.ratings-error,
+.ratings-empty {
+  padding: 60px 20px;
+
+  text-align: center;
+}
+
+
+.ratings-message {
+  color: #888888;
+}
+
+
+.ratings-error {
+  color: #ff525c;
+}
+
+
+.ratings-empty {
+  color: #777777;
+}
+
+
+/* ============================================ */
+/* 태블릿 */
+/* ============================================ */
+
+@media (max-width: 900px) {
+
+  .ratings-table-header,
+  .ratings-table-row {
+    grid-template-columns:
+      220px
+      minmax(220px, 1fr)
+      220px;
+  }
+
+}
+
+
+/* ============================================ */
+/* 모바일 */
+/* ============================================ */
+
+@media (max-width: 700px) {
+
+  .ratings-page {
+    padding-top: 20px;
+  }
+
+
+  .ratings-table {
+    border-radius: 10px;
+  }
+
+
+  .ratings-table-header {
+    display: none;
+  }
+
+
+  .ratings-table-row {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    padding: 22px;
+
+    min-height: auto;
+  }
+
+
+  .ratings-score-cell {
+    justify-content: flex-start;
+  }
+
+}

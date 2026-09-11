@@ -1,0 +1,1300 @@
+/* ============================================ */
+/* 공통 */
+/* ============================================ */
+
+.ott-home-page,
+.all-movies-page {
+  width: 100%;
+
+  padding: 38px 0 90px;
+
+  color: var(--text-main);
+}
+
+
+/* ============================================ */
+/* OTT 인사 */
+/* ============================================ */
+
+.ott-welcome {
+  margin-bottom: 46px;
+}
+
+
+.ott-welcome-small {
+  margin: 0 0 8px;
+
+  color: var(--accent);
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 2.5px;
+}
+
+
+.ott-welcome h1 {
+  margin: 0;
+
+  color: var(--text-main);
+
+  font-size: 38px;
+
+  font-weight: 900;
+
+  letter-spacing: -1.8px;
+}
+
+
+.ott-welcome > p:last-child {
+  margin: 12px 0 0;
+
+  color: var(--text-sub);
+
+  font-size: 13px;
+}
+
+
+/* ============================================ */
+/* 콘텐츠 섹션 */
+/* ============================================ */
+
+.ott-content-section {
+  position: relative;
+
+  margin-bottom: 55px;
+}
+
+
+.ott-section-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 19px;
+}
+
+
+.ott-section-small {
+  margin: 0 0 6px;
+
+  color: var(--accent);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+
+.ott-section-header h2 {
+  margin: 0;
+
+  color: var(--text-main);
+
+  font-size: 25px;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+}
+
+
+.ott-section-description {
+  max-width: 720px;
+
+  margin: 8px 0 0;
+
+  color: var(--text-sub);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* ============================================ */
+/* TOP10 오른쪽 */
+/* ============================================ */
+
+.ott-section-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+
+/* ============================================ */
+/* 전체 영화 보기 버튼 */
+/* ============================================ */
+
+.all-movies-button {
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 15px;
+
+  background: var(--surface-1);
+
+  color: var(--text-main);
+
+  border: 1px solid var(--line);
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background .2s,
+    border-color .2s,
+    color .2s,
+    transform .2s;
+}
+
+
+.all-movies-button span {
+  color: var(--accent);
+
+  font-size: 17px;
+
+  transition: transform .2s;
+}
+
+
+.all-movies-button:hover {
+  background: var(--surface-2);
+
+  color: var(--accent);
+
+  border-color: var(--accent);
+
+  transform: translateY(-1px);
+}
+
+
+.all-movies-button:hover span {
+  transform: translateX(3px);
+}
+
+
+/* ============================================ */
+/* 좌우 이동 */
+/* ============================================ */
+
+.ott-row-controls {
+  display: flex;
+
+  gap: 6px;
+}
+
+
+.ott-row-controls button {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: var(--surface-2);
+
+  color: var(--text-main);
+
+  border: 1px solid var(--line);
+
+  border-radius: 50%;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+
+.ott-row-controls button:hover {
+  background: var(--surface-3);
+
+  border-color: var(--accent);
+}
+
+
+/* ============================================ */
+/* 가로 스크롤 */
+/* ============================================ */
+
+.ott-horizontal-row {
+  display: flex;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+
+  scroll-behavior: smooth;
+
+  overscroll-behavior-inline: contain;
+}
+
+
+.ott-horizontal-row::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ============================================ */
+/* TOP 10 */
+/* ============================================ */
+
+.top10-row {
+  gap: 12px;
+
+  padding: 8px 2px 17px;
+}
+
+
+.top10-item {
+  position: relative;
+
+  width: 300px;
+  height: 335px;
+
+  flex: 0 0 300px;
+
+  cursor: pointer;
+}
+
+
+.top10-rank {
+  position: absolute;
+
+  left: -3px;
+  bottom: -4px;
+
+  z-index: 3;
+
+  width: 125px;
+
+  color: var(--surface-1);
+
+  font-size: 150px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-weight: 900;
+
+  line-height: .8;
+
+  text-align: center;
+
+  -webkit-text-stroke:
+    3px var(--text-main);
+
+  text-shadow:
+    0 5px 20px
+    rgba(0,0,0,.35);
+
+  pointer-events: none;
+}
+
+
+.top10-item:nth-child(10)
+.top10-rank {
+  width: 180px;
+
+  left: -33px;
+
+  font-size: 125px;
+}
+
+
+.top10-poster-wrapper {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 205px;
+  height: 305px;
+
+  overflow: hidden;
+
+  background: var(--surface-2);
+
+  border: 1px solid var(--line);
+
+  border-radius: 12px;
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform .24s,
+    border-color .24s;
+}
+
+
+.top10-item:hover
+.top10-poster-wrapper {
+  transform:
+    translateY(-7px)
+    scale(1.025);
+
+  border-color: var(--accent);
+}
+
+
+.top10-poster {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+.top10-no-poster {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+
+.top10-hover-info {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding:
+    42px 13px 13px;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0,0,0,.88)
+    );
+
+  opacity: 0;
+
+  transform:
+    translateY(7px);
+
+  transition: .2s;
+}
+
+
+.top10-item:hover
+.top10-hover-info {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+.top10-hover-info strong {
+  overflow: hidden;
+
+  color: #fff;
+
+  font-size: 13px;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.top10-hover-info span {
+  overflow: hidden;
+
+  color: #c8c8c8;
+
+  font-size: 9px;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================ */
+/* 개인 추천 */
+/* ============================================ */
+
+.personalized-section {
+  margin-top: 15px;
+}
+
+
+.recommend-row {
+  gap: 15px;
+
+  padding: 7px 2px 20px;
+}
+
+
+.ott-recommend-card {
+  width: 210px;
+
+  flex: 0 0 210px;
+
+  cursor: pointer;
+}
+
+
+.ott-recommend-poster-area {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 2 / 3;
+
+  overflow: hidden;
+
+  background: var(--surface-2);
+
+  border: 1px solid var(--line);
+
+  border-radius: 11px;
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform .22s,
+    border-color .22s;
+}
+
+
+.ott-recommend-card:hover
+.ott-recommend-poster-area {
+  transform:
+    translateY(-7px)
+    scale(1.025);
+
+  border-color: var(--accent);
+}
+
+
+.ott-recommend-poster {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+.ott-recommend-no-poster {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+
+.ott-card-gradient {
+  position: absolute;
+
+  inset: 35% 0 0;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0,0,0,.88)
+    );
+
+  pointer-events: none;
+}
+
+
+.ott-card-info {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding:
+    50px 13px 14px;
+}
+
+
+.ott-card-info strong {
+  overflow: hidden;
+
+  color: #fff;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.ott-card-info span {
+  overflow: hidden;
+
+  color: #c4c4c4;
+
+  font-size: 9px;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================ */
+/* 추천 근거 */
+/* ============================================ */
+
+.taste-source-section {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding: 21px 24px;
+
+  background: var(--surface-1);
+
+  border: 1px solid var(--line);
+
+  border-radius: 14px;
+
+  box-shadow: var(--shadow);
+}
+
+
+.taste-source-section p {
+  margin: 0 0 4px;
+
+  color: var(--accent);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.taste-source-section h3 {
+  margin: 0;
+
+  color: var(--text-main);
+
+  font-size: 16px;
+}
+
+
+.taste-source-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: flex-end;
+
+  gap: 7px;
+}
+
+
+.taste-source-list button {
+  padding: 7px 11px;
+
+  background: var(--surface-2);
+
+  color: var(--text-sub);
+
+  border: 1px solid var(--line);
+
+  border-radius: 20px;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+
+.taste-source-list button:hover {
+  color: var(--accent);
+
+  border-color: var(--accent);
+}
+
+
+/* ============================================ */
+/* 추천 없음 */
+/* ============================================ */
+
+.ott-no-recommendations {
+  padding: 55px 30px;
+
+  background: var(--surface-1);
+
+  border: 1px solid var(--line);
+
+  border-radius: 15px;
+
+  text-align: center;
+}
+
+
+.ott-no-recommendations h3 {
+  margin: 0;
+
+  color: var(--text-main);
+
+  font-size: 18px;
+}
+
+
+.ott-no-recommendations p {
+  margin: 9px 0 0;
+
+  color: var(--text-sub);
+
+  font-size: 12px;
+}
+
+
+/* ============================================ */
+/* 전체 영화 페이지 상단 */
+/* ============================================ */
+
+.all-movies-header {
+  margin-bottom: 28px;
+}
+
+
+.back-home-button {
+  margin-bottom: 27px;
+
+  padding: 8px 12px;
+
+  background: var(--surface-1);
+
+  color: var(--text-sub);
+
+  border: 1px solid var(--line);
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.back-home-button:hover {
+  color: var(--accent);
+
+  border-color: var(--accent);
+}
+
+
+.all-movies-small-title {
+  margin: 0 0 7px;
+
+  color: var(--accent);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+
+.all-movies-header h1 {
+  margin: 0;
+
+  color: var(--text-main);
+
+  font-size: 36px;
+
+  font-weight: 900;
+
+  letter-spacing: -1.5px;
+}
+
+
+.all-movies-header > p:last-child {
+  margin: 10px 0 0;
+
+  color: var(--text-sub);
+
+  font-size: 13px;
+}
+
+
+/* ============================================ */
+/* 전체 영화 검색 필터 */
+/* ============================================ */
+
+.movie-filter-panel {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 2fr)
+    minmax(150px, .7fr)
+    minmax(180px, .8fr)
+    auto;
+
+  align-items: end;
+
+  gap: 13px;
+
+  margin-bottom: 15px;
+
+  padding: 20px;
+
+  background: var(--surface-1);
+
+  border: 1px solid var(--line);
+
+  border-radius: 15px;
+
+  box-shadow: var(--shadow);
+}
+
+
+.movie-search-area label,
+.movie-filter-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+
+.movie-search-box {
+  position: relative;
+}
+
+
+.movie-search-box input {
+  width: 100%;
+  height: 43px;
+
+  padding:
+    0 42px 0 13px;
+
+  background: var(--surface-2);
+
+  color: var(--text-main);
+
+  border: 1px solid var(--line);
+
+  border-radius: 9px;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 13px;
+}
+
+
+.movie-search-box input::placeholder {
+  color: var(--text-muted);
+}
+
+
+.movie-search-box input:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 3px
+    var(--accent-soft);
+}
+
+
+.search-clear-button {
+  position: absolute;
+
+  right: 9px;
+  top: 9px;
+
+  width: 25px;
+  height: 25px;
+
+  padding: 0;
+
+  background: var(--surface-3);
+
+  color: var(--text-muted);
+
+  border: none;
+
+  border-radius: 50%;
+
+  font-size: 17px;
+
+  cursor: pointer;
+}
+
+
+.movie-filter-field select {
+  width: 100%;
+  height: 43px;
+
+  padding:
+    0 10px;
+
+  background: var(--surface-2);
+
+  color: var(--text-main);
+
+  border: 1px solid var(--line);
+
+  border-radius: 9px;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+.movie-filter-field select:focus {
+  border-color: var(--accent);
+}
+
+
+.movie-filter-reset {
+  height: 43px;
+
+  padding: 0 16px;
+
+  background: var(--surface-2);
+
+  color: var(--text-sub);
+
+  border: 1px solid var(--line);
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.movie-filter-reset:hover {
+  color: var(--accent);
+
+  border-color: var(--accent);
+}
+
+
+/* ============================================ */
+/* 결과 */
+/* ============================================ */
+
+.movie-result-bar {
+  min-height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+
+.movie-result-bar > div {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+
+.movie-result-bar strong {
+  color: var(--text-main);
+
+  font-size: 17px;
+}
+
+
+.active-filter-badge {
+  padding: 5px 10px;
+
+  background: var(--accent-soft);
+
+  color: var(--accent);
+
+  border: 1px solid var(--line);
+
+  border-radius: 20px;
+
+  font-size: 10px;
+}
+
+
+/* ============================================ */
+/* 전체 영화 카드 */
+/* ============================================ */
+
+.all-movies-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(235px, 1fr)
+    );
+
+  gap: 24px;
+}
+
+
+/* ============================================ */
+/* 결과 없음 */
+/* ============================================ */
+
+.movie-no-result {
+  min-height: 320px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--surface-1);
+
+  border: 1px solid var(--line);
+
+  border-radius: 16px;
+
+  text-align: center;
+}
+
+
+.movie-no-result h2 {
+  margin: 0;
+
+  color: var(--text-main);
+}
+
+
+.movie-no-result p {
+  margin: 8px 0 18px;
+
+  color: var(--text-sub);
+
+  font-size: 12px;
+}
+
+
+.movie-no-result button {
+  padding: 9px 15px;
+
+  background: var(--accent-soft);
+
+  color: var(--accent);
+
+  border: 1px solid var(--accent);
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+
+/* ============================================ */
+/* 메시지 */
+/* ============================================ */
+
+.ott-home-message,
+.ott-home-error {
+  padding: 90px 20px;
+
+  text-align: center;
+}
+
+
+.ott-home-message {
+  color: var(--text-sub);
+}
+
+
+.ott-home-error {
+  color: #ff747d;
+}
+
+
+/* ============================================ */
+/* 사용자 없음 */
+/* ============================================ */
+
+.ott-empty-state {
+  min-height: 400px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.ott-empty-state h2 {
+  margin: 0;
+
+  color: var(--text-main);
+}
+
+
+.ott-empty-state p {
+  margin: 10px 0 20px;
+
+  color: var(--text-sub);
+
+  font-size: 12px;
+}
+
+
+.ott-empty-state button {
+  padding: 10px 17px;
+
+  background: var(--accent);
+
+  color: #fff;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* ============================================ */
+/* 태블릿 */
+/* ============================================ */
+
+@media (max-width: 900px) {
+
+  .movie-filter-panel {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .movie-search-area {
+    grid-column:
+      1 / -1;
+  }
+
+}
+
+
+/* ============================================ */
+/* 모바일 */
+/* ============================================ */
+
+@media (max-width: 700px) {
+
+  .ott-home-page,
+  .all-movies-page {
+    padding-top: 24px;
+  }
+
+
+  .ott-welcome h1 {
+    font-size: 29px;
+  }
+
+
+  .ott-section-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .ott-section-header h2 {
+    font-size: 20px;
+  }
+
+
+  .ott-section-actions {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+
+  .ott-row-controls {
+    display: none;
+  }
+
+
+  .all-movies-button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+
+  .top10-item {
+    width: 230px;
+
+    height: 280px;
+
+    flex-basis: 230px;
+  }
+
+
+  .top10-poster-wrapper {
+    width: 165px;
+
+    height: 245px;
+  }
+
+
+  .top10-rank {
+    width: 95px;
+
+    font-size: 115px;
+  }
+
+
+  .ott-recommend-card {
+    width: 165px;
+
+    flex-basis: 165px;
+  }
+
+
+  .taste-source-section {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .taste-source-list {
+    justify-content: flex-start;
+  }
+
+
+  .movie-filter-panel {
+    grid-template-columns: 1fr;
+
+    padding: 15px;
+  }
+
+
+  .movie-search-area {
+    grid-column: auto;
+  }
+
+
+  .all-movies-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

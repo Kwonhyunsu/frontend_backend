@@ -1,0 +1,900 @@
+/* ============================================ */
+/* 기본 */
+/* ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family:
+    "Pretendard",
+    "Noto Sans KR",
+    "Apple SD Gothic Neo",
+    "Malgun Gothic",
+    sans-serif;
+}
+
+
+/* ============================================ */
+/* 앱 전체 */
+/* ============================================ */
+
+.app {
+  min-height: 100vh;
+  color: var(--text-main);
+  background: var(--bg-main);
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* ============================================ */
+/* 다크 테마 */
+/* 너무 새까맣지 않게 */
+/* ============================================ */
+
+.theme-dark {
+  --bg-main:
+    radial-gradient(
+      circle at top left,
+      rgba(88, 58, 35, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(70, 47, 33, 0.14),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #14110f 0%,
+      #11100f 45%,
+      #181513 100%
+    );
+
+  --bg-header:
+    rgba(20, 17, 15, 0.92);
+
+  --surface-1:
+    #1a1715;
+
+  --surface-2:
+    #221d19;
+
+  --surface-3:
+    #2a231d;
+
+  --surface-soft:
+    rgba(255, 255, 255, 0.03);
+
+  --line:
+    #3a322d;
+
+  --line-soft:
+    #2d2723;
+
+  --text-main:
+    #f6f1ec;
+
+  --text-sub:
+    #c2b4a7;
+
+  --text-muted:
+    #8d8074;
+
+  --accent:
+    #d35f45;
+
+  --accent-soft:
+    rgba(211, 95, 69, 0.14);
+
+  --shadow:
+    0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+
+/* ============================================ */
+/* 시네마 테마 */
+/* ============================================ */
+
+.theme-cinema {
+  --bg-main:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(125, 37, 54, 0.36),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 8%,
+      rgba(42, 66, 96, 0.28),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 88% 85%,
+      rgba(124, 72, 45, 0.28),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #17141b 0%,
+      #121722 48%,
+      #181217 100%
+    );
+
+  --bg-header:
+    rgba(22, 19, 24, 0.84);
+
+  --surface-1:
+    rgba(29, 25, 31, 0.82);
+
+  --surface-2:
+    rgba(36, 31, 38, 0.88);
+
+  --surface-3:
+    rgba(51, 42, 49, 0.92);
+
+  --surface-soft:
+    rgba(255, 255, 255, 0.04);
+
+  --line:
+    rgba(255, 255, 255, 0.11);
+
+  --line-soft:
+    rgba(255, 255, 255, 0.07);
+
+  --text-main:
+    #f8f3ed;
+
+  --text-sub:
+    #cabdb4;
+
+  --text-muted:
+    #958881;
+
+  --accent:
+    #df7a5c;
+
+  --accent-soft:
+    rgba(223, 122, 92, 0.15);
+
+  --shadow:
+    0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ============================================ */
+/* 라이트 테마 */
+/* 너무 새하얗지 않게 */
+/* ============================================ */
+
+.theme-light {
+  --bg-main:
+    linear-gradient(
+      180deg,
+      #f7f4ef 0%,
+      #f2eee8 58%,
+      #ece7e1 100%
+    );
+
+  --bg-header:
+    rgba(250, 247, 242, 0.92);
+
+  --surface-1:
+    #fffdfa;
+
+  --surface-2:
+    #f7f2eb;
+
+  --surface-3:
+    #f0e9e1;
+
+  --surface-soft:
+    rgba(0, 0, 0, 0.03);
+
+  --line:
+    #ddd2c7;
+
+  --line-soft:
+    #e8dfd6;
+
+  --text-main:
+    #241d18;
+
+  --text-sub:
+    #5f5348;
+
+  --text-muted:
+    #8c7d71;
+
+  --accent:
+    #cc5d45;
+
+  --accent-soft:
+    rgba(204, 93, 69, 0.12);
+
+  --shadow:
+    0 10px 28px rgba(72, 55, 40, 0.08);
+}
+
+
+/* ============================================ */
+/* 공통 페이지 영역 */
+/* ============================================ */
+
+.app-content {
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  min-height: calc(100vh - 72px);
+  margin: 0 auto;
+  padding: 20px 0 60px;
+}
+
+
+/* ============================================ */
+/* 헤더 */
+/* ============================================ */
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+  padding: 0 32px;
+
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  font-size: 23px;
+}
+
+.logo-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.theme-cinema .logo-title {
+  background: linear-gradient(90deg, #ffffff, #f4c3a6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-left: 42px;
+}
+
+.nav-link {
+  position: relative;
+  padding: 25px 0;
+  color: var(--text-sub);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 17px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  transition: width 0.2s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+/* ============================================ */
+/* 테마 선택 */
+/* ============================================ */
+
+.theme-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  padding-left: 24px;
+}
+
+.theme-selector-label {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.theme-buttons {
+  display: flex;
+  gap: 5px;
+  padding: 4px;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.theme-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.theme-button:hover {
+  color: var(--text-main);
+}
+
+.theme-button.active {
+  color: var(--text-main);
+  background: var(--surface-soft);
+  border-color: var(--line);
+}
+
+.theme-preview {
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+
+.dark-preview {
+  background: linear-gradient(135deg, #2c211b, #151210);
+  border: 1px solid #5d4b3d;
+}
+
+.cinema-preview {
+  background: linear-gradient(135deg, #7c2438, #20293f 55%, #8a5537);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.light-preview {
+  background: linear-gradient(135deg, #fffdf9, #ebe3d8);
+  border: 1px solid #cfc2b4;
+}
+
+
+/* ============================================ */
+/* 공통 텍스트 */
+/* ============================================ */
+
+.recommend-page,
+.ratings-page,
+.community-page,
+.movie-management-page,
+.login-page {
+  color: var(--text-main);
+}
+
+.recommend-small-title,
+.ratings-small-title,
+.community-small-title,
+.movie-management-small-title {
+  color: var(--accent) !important;
+}
+
+.recommend-title,
+.ratings-header h1,
+.community-header h1,
+.movie-management-header h1,
+.profile-title {
+  color: var(--text-main) !important;
+}
+
+.recommend-description,
+.ratings-description,
+.community-header p,
+.movie-management-header > p:last-child,
+.profile-description,
+.profile-loading,
+.recommend-message,
+.ratings-message,
+.community-message,
+.movie-management-message {
+  color: var(--text-sub) !important;
+}
+
+.recommend-error,
+.ratings-error,
+.community-error,
+.movie-management-error {
+  color: #ff7b83 !important;
+}
+
+
+/* ============================================ */
+/* 공통 카드/박스 */
+/* ============================================ */
+
+.profile-card,
+.add-user-box,
+.movie-card,
+.ratings-table,
+.community-movie-card,
+.movie-form-section,
+.management-movie-card {
+  background: var(--surface-1) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: var(--shadow);
+  color: var(--text-main) !important;
+}
+
+.profile-card:hover,
+.management-movie-card:hover,
+.community-movie-card:hover {
+  background: var(--surface-2) !important;
+}
+
+.movie-form-section,
+.add-user-box {
+  background: var(--surface-2) !important;
+}
+
+
+/* ============================================ */
+/* 로그인 화면 */
+/* ============================================ */
+
+.profile-avatar,
+.add-user-avatar {
+  background: linear-gradient(
+    135deg,
+    var(--surface-3),
+    var(--surface-1)
+  ) !important;
+
+  border-color: var(--line) !important;
+  color: var(--text-main) !important;
+}
+
+.profile-name {
+  color: var(--text-sub) !important;
+}
+
+.profile-card:hover .profile-name {
+  color: var(--text-main) !important;
+}
+
+.profile-id,
+.edit-user-description {
+  color: var(--text-muted) !important;
+}
+
+.add-user-input {
+  background: var(--surface-1) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--line) !important;
+}
+
+.add-user-input::placeholder {
+  color: var(--text-muted);
+}
+
+.add-user-input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-soft) !important;
+}
+
+
+/* ============================================ */
+/* 공통 버튼 */
+/* ============================================ */
+
+.profile-edit-button,
+.profile-delete-button,
+.add-user-cancel,
+.movie-cancel-button,
+.management-edit,
+.management-delete,
+.rating-delete-button,
+.movie-view-button {
+  background: var(--surface-1) !important;
+  color: var(--text-sub) !important;
+  border: 1px solid var(--line) !important;
+}
+
+.profile-edit-button:hover,
+.add-user-cancel:hover,
+.movie-cancel-button:hover,
+.management-edit:hover,
+.movie-view-button:hover {
+  color: var(--text-main) !important;
+  border-color: var(--accent) !important;
+  background: var(--surface-2) !important;
+}
+
+.profile-delete-button:hover,
+.management-delete:hover,
+.rating-delete-button:hover {
+  color: #ff8f96 !important;
+  border-color: #ff8f96 !important;
+  background: rgba(255, 127, 138, 0.08) !important;
+}
+
+.add-user-save,
+.movie-save-button,
+.rating-save-button {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.add-user-save:hover,
+.movie-save-button:hover,
+.rating-save-button:hover {
+  filter: brightness(1.05);
+}
+
+.movie-view-button.active,
+.theme-button.active {
+  background: var(--surface-3) !important;
+  color: var(--text-main) !important;
+  border-color: var(--line) !important;
+}
+
+
+/* ============================================ */
+/* 추천 페이지 / 영화 카드 */
+/* ============================================ */
+
+.movie-card {
+  border-radius: 16px !important;
+}
+
+.poster-wrapper {
+  background: var(--surface-2) !important;
+}
+
+.movie-title {
+  color: var(--text-main) !important;
+}
+
+.movie-meta,
+.movie-overview,
+.rating-number,
+.rating-message {
+  color: var(--text-sub) !important;
+}
+
+.score-label {
+  color: var(--text-muted) !important;
+}
+
+.score-value {
+  color: var(--accent) !important;
+}
+
+.rating-title {
+  color: var(--text-main) !important;
+}
+
+
+/* 0.5 별 */
+.half-star-base {
+  color: color-mix(in srgb, var(--text-muted) 35%, transparent) !important;
+}
+
+.half-star-fill {
+  color: #ffd45a !important;
+}
+
+
+/* ============================================ */
+/* Ratings 페이지 */
+/* ============================================ */
+
+.ratings-table {
+  overflow: hidden;
+}
+
+.ratings-table-header {
+  background: var(--surface-2) !important;
+  border-bottom: 1px solid var(--line) !important;
+  color: var(--text-muted) !important;
+}
+
+.ratings-table-row {
+  border-bottom: 1px solid var(--line-soft) !important;
+  background: transparent !important;
+}
+
+.ratings-table-row:hover {
+  background: var(--surface-soft) !important;
+}
+
+.ratings-user-icon {
+  background: var(--surface-3) !important;
+  color: var(--text-main) !important;
+}
+
+.ratings-user-text strong,
+.ratings-movie-cell strong {
+  color: var(--text-main) !important;
+}
+
+.ratings-user-text span,
+.ratings-movie-cell span,
+.ratings-empty {
+  color: var(--text-muted) !important;
+}
+
+.fraction-star-base {
+  color: color-mix(in srgb, var(--text-muted) 35%, transparent) !important;
+}
+
+.fraction-star-fill {
+  color: #ffd45a !important;
+}
+
+.ratings-score-number {
+  color: var(--text-main) !important;
+}
+
+
+/* ============================================ */
+/* Community 페이지 */
+/* ============================================ */
+
+.community-movie-card {
+  overflow: hidden;
+}
+
+.community-movie-info {
+  background: var(--surface-1) !important;
+  border-bottom: 1px solid var(--line-soft) !important;
+}
+
+.community-user-ratings {
+  background: var(--surface-2) !important;
+}
+
+.community-user-row {
+  background: transparent !important;
+  border-top: 1px solid var(--line-soft) !important;
+}
+
+.community-user-row:first-child {
+  border-top: none !important;
+}
+
+.community-user-row:hover {
+  background: var(--surface-soft) !important;
+}
+
+.community-user-row.my-rating {
+  background: var(--accent-soft) !important;
+}
+
+.community-user-icon {
+  background: var(--surface-3) !important;
+  color: var(--text-main) !important;
+}
+
+.community-movie-main h2,
+.community-user-info strong,
+.community-stars strong {
+  color: var(--text-main) !important;
+}
+
+.community-meta,
+.rating-count {
+  color: var(--text-sub) !important;
+}
+
+.me-badge {
+  background: var(--accent-soft) !important;
+  color: var(--accent) !important;
+  border: 1px solid var(--line) !important;
+}
+
+.average-star {
+  color: #ffd45a !important;
+}
+
+.community-average strong {
+  color: var(--text-main) !important;
+}
+
+.community-average span {
+  color: var(--text-sub) !important;
+}
+
+.community-star-base {
+  color: color-mix(in srgb, var(--text-muted) 35%, transparent) !important;
+}
+
+.community-star-fill {
+  color: #ffd45a !important;
+}
+
+
+/* ============================================ */
+/* 영화 관리 페이지 */
+/* ============================================ */
+
+.movie-form-group label,
+.management-id {
+  color: var(--text-muted) !important;
+}
+
+.movie-form-group input,
+.movie-form-group textarea {
+  background: var(--surface-1) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--line) !important;
+}
+
+.movie-form-group input::placeholder,
+.movie-form-group textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.movie-form-group input:focus,
+.movie-form-group textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-soft) !important;
+}
+
+.management-poster-area {
+  background: var(--surface-2) !important;
+}
+
+.management-no-poster {
+  color: var(--text-muted) !important;
+}
+
+.management-movie-info h3 {
+  color: var(--text-main) !important;
+}
+
+.management-meta,
+.management-overview,
+.management-popularity,
+.movie-list-title span {
+  color: var(--text-sub) !important;
+}
+
+
+/* ============================================ */
+/* 테마별 추가 보정 */
+/* ============================================ */
+
+/* 라이트 모드에서 일부 글자가 너무 연해지지 않도록 */
+.theme-light .nav-link,
+.theme-light .profile-name,
+.theme-light .movie-meta,
+.theme-light .movie-overview,
+.theme-light .community-meta,
+.theme-light .management-meta,
+.theme-light .ratings-description,
+.theme-light .recommend-description {
+  color: var(--text-sub) !important;
+}
+
+.theme-light .profile-card:hover,
+.theme-light .community-user-row:hover,
+.theme-light .ratings-table-row:hover {
+  background: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* 다크 모드에서 검정 너무 세지 않게 */
+.theme-dark .community-user-ratings,
+.theme-dark .ratings-table-header,
+.theme-dark .movie-form-section,
+.theme-dark .add-user-box {
+  background: var(--surface-2) !important;
+}
+
+/* 시네마 모드 유리 느낌 */
+.theme-cinema .profile-card,
+.theme-cinema .add-user-box,
+.theme-cinema .movie-card,
+.theme-cinema .ratings-table,
+.theme-cinema .community-movie-card,
+.theme-cinema .movie-form-section,
+.theme-cinema .management-movie-card {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* ============================================ */
+/* 모바일 */
+/* ============================================ */
+
+@media (max-width: 1000px) {
+  .app-header {
+    flex-wrap: wrap;
+    padding: 12px 20px;
+    gap: 8px;
+  }
+
+  .app-nav {
+    order: 3;
+    width: 100%;
+    margin: 0;
+    gap: 18px;
+    overflow-x: auto;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+  }
+
+  .nav-link::after {
+    bottom: 3px;
+  }
+
+  .theme-selector {
+    margin-left: auto;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .logo-title {
+    font-size: 16px;
+  }
+
+  .theme-selector-label {
+    display: none;
+  }
+
+  .theme-button span:last-child {
+    display: none;
+  }
+
+  .theme-button {
+    padding: 7px;
+  }
+
+  .app-content {
+    width: calc(100% - 28px);
+  }
+}

@@ -1,0 +1,619 @@
+/* ============================================ */
+/* 전체 로그인 페이지 */
+/* ============================================ */
+
+.login-page {
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  padding: 65px 0 80px;
+}
+
+
+/* ============================================ */
+/* 상단 */
+/* ============================================ */
+
+.login-header {
+  margin-bottom: 45px;
+
+  text-align: center;
+}
+
+
+.login-small-title {
+  margin: 0 0 10px;
+
+  color: var(--accent, #d35f45);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+
+.profile-title {
+  margin: 0;
+
+  color: var(--text-main, #ffffff);
+
+  font-size: 42px;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+}
+
+
+.profile-description {
+  margin: 13px 0 0;
+
+  color: var(--text-sub, #aaaaaa);
+
+  font-size: 14px;
+}
+
+
+/* ============================================ */
+/* 중요 */
+/* 기존 가운데 🎬 아이콘 관련 공간 자체 없음 */
+/* ============================================ */
+
+
+/* ============================================ */
+/* 사용자 카드 목록 */
+/* ============================================ */
+
+.profile-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(210px, 1fr)
+    );
+
+  gap: 22px;
+}
+
+
+/* ============================================ */
+/* 사용자 카드 */
+/* ============================================ */
+
+.profile-card {
+  overflow: hidden;
+
+  padding: 0;
+
+  background:
+    var(--surface-1, #191715);
+
+  border:
+    1px solid
+    var(--line, #36302b);
+
+  border-radius: 15px;
+
+  color:
+    var(--text-main, #ffffff);
+
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    background-color 0.2s;
+
+  box-shadow:
+    var(
+      --shadow,
+      0 12px 30px rgba(0,0,0,.2)
+    );
+}
+
+
+.profile-card:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    var(--accent, #d35f45);
+}
+
+
+/* ============================================ */
+/* 사용자 선택 버튼 */
+/* ============================================ */
+
+.profile-select-area {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    30px 20px 22px;
+
+  background: transparent;
+
+  color: inherit;
+
+  border: none;
+
+  font-family: inherit;
+
+  cursor: pointer;
+}
+
+
+/* ============================================ */
+/* 사용자 아이콘 */
+/* ============================================ */
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    var(--surface-3, #2a2521);
+
+  border:
+    1px solid
+    var(--line, #3b332d);
+
+  border-radius: 18px;
+
+  font-size: 28px;
+}
+
+
+/* ============================================ */
+/* 사용자 이름 */
+/* ============================================ */
+
+.profile-text {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+.profile-name {
+  color:
+    var(--text-main, #ffffff);
+
+  font-size: 16px;
+
+  font-weight: 750;
+}
+
+
+.profile-id {
+  color:
+    var(--text-muted, #777777);
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+/* ============================================ */
+/* 사용자 관리 버튼 */
+/* ============================================ */
+
+.profile-actions {
+  display: flex;
+
+  gap: 8px;
+
+  padding:
+    0 15px 15px;
+}
+
+
+.profile-edit-button,
+.profile-delete-button {
+  flex: 1;
+
+  padding: 8px;
+
+  border-radius: 7px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+
+.profile-edit-button {
+  background:
+    var(--surface-2, #211d1a);
+
+  color:
+    var(--text-sub, #bbbbbb);
+
+  border:
+    1px solid
+    var(--line, #39322d);
+}
+
+
+.profile-edit-button:hover {
+  color:
+    var(--text-main, #ffffff);
+
+  border-color:
+    var(--accent, #d35f45);
+}
+
+
+.profile-delete-button {
+  background:
+    transparent;
+
+  color:
+    var(--text-muted, #888888);
+
+  border:
+    1px solid
+    var(--line, #39322d);
+}
+
+
+.profile-delete-button:hover {
+  color: #ff7c84;
+
+  border-color: #ff7c84;
+
+  background:
+    rgba(255, 80, 90, 0.07);
+}
+
+
+/* ============================================ */
+/* 이름 수정 */
+/* ============================================ */
+
+.profile-edit-area {
+  width: 100%;
+}
+
+
+.profile-edit-input {
+  width: 100%;
+
+  padding: 11px;
+
+  background:
+    var(--surface-2, #211d1a);
+
+  color:
+    var(--text-main, #ffffff);
+
+  border:
+    1px solid
+    var(--line, #39322d);
+
+  border-radius: 7px;
+
+  outline: none;
+
+  text-align: center;
+}
+
+
+.profile-edit-input:focus {
+  border-color:
+    var(--accent, #d35f45);
+}
+
+
+.edit-user-description {
+  margin:
+    7px 0 0;
+
+  color:
+    var(--text-muted, #888);
+
+  font-size:
+    10px;
+}
+
+
+/* ============================================ */
+/* 사용자 추가 카드 */
+/* ============================================ */
+
+.add-profile-card {
+  min-height: 205px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  font-family: inherit;
+
+  cursor: pointer;
+}
+
+
+.add-user-avatar {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 4px;
+
+  background:
+    var(--surface-3, #2a2521);
+
+  color:
+    var(--text-main, #ffffff);
+
+  border:
+    1px solid
+    var(--line, #39322d);
+
+  border-radius:
+    50%;
+
+  font-size:
+    31px;
+
+  font-weight:
+    300;
+}
+
+
+/* ============================================ */
+/* 사용자 추가 입력 박스 */
+/* ============================================ */
+
+.add-user-box {
+  max-width: 600px;
+
+  margin:
+    45px auto 0;
+
+  padding: 28px;
+
+  background:
+    var(--surface-2, #211d1a);
+
+  border:
+    1px solid
+    var(--line, #39322d);
+
+  border-radius:
+    15px;
+}
+
+
+.add-user-box h2 {
+  margin:
+    0 0 8px;
+
+  color:
+    var(--text-main, #ffffff);
+
+  font-size:
+    20px;
+}
+
+
+.add-user-box p {
+  margin:
+    0 0 20px;
+
+  color:
+    var(--text-sub, #999999);
+
+  font-size:
+    12px;
+}
+
+
+.add-user-form {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    13px;
+}
+
+
+.add-user-input {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  background:
+    var(--surface-1, #171513);
+
+  color:
+    var(--text-main, #ffffff);
+
+  border:
+    1px solid
+    var(--line, #39322d);
+
+  border-radius:
+    8px;
+
+  outline:
+    none;
+
+  font-family:
+    inherit;
+}
+
+
+.add-user-input:focus {
+  border-color:
+    var(--accent, #d35f45);
+
+  box-shadow:
+    0 0 0 3px
+    var(--accent-soft, rgba(211,95,69,.12));
+}
+
+
+/* ============================================ */
+/* 사용자 추가 버튼 */
+/* ============================================ */
+
+.add-user-buttons {
+  display:
+    flex;
+
+  justify-content:
+    flex-end;
+
+  gap:
+    9px;
+}
+
+
+.add-user-cancel,
+.add-user-save {
+  padding:
+    10px 16px;
+
+  border-radius:
+    7px;
+
+  font-family:
+    inherit;
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
+}
+
+
+.add-user-cancel {
+  background:
+    transparent;
+
+  color:
+    var(--text-sub, #aaa);
+
+  border:
+    1px solid
+    var(--line, #39322d);
+}
+
+
+.add-user-save {
+  background:
+    var(--accent, #d35f45);
+
+  color:
+    #ffffff;
+
+  border:
+    none;
+}
+
+
+/* ============================================ */
+/* 메시지 */
+/* ============================================ */
+
+.profile-loading,
+.profile-error {
+  padding: 100px 20px;
+
+  text-align: center;
+}
+
+
+.profile-loading {
+  color:
+    var(--text-sub, #999);
+}
+
+
+.profile-error {
+  color: #ff7079;
+}
+
+
+/* ============================================ */
+/* 모바일 */
+/* ============================================ */
+
+@media (max-width: 700px) {
+
+  .login-page {
+    padding-top:
+      35px;
+  }
+
+
+  .profile-title {
+    font-size:
+      34px;
+  }
+
+
+  .profile-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap:
+      13px;
+  }
+
+
+  .profile-avatar {
+    width:
+      58px;
+
+    height:
+      58px;
+  }
+
+}

@@ -1,0 +1,184 @@
+/* ============================================ */
+/* 전체 */
+/* ============================================ */
+
+.favorites-page {
+  width: 100%;
+
+  padding: 30px 0 80px;
+
+  color: var(--text-main);
+}
+
+
+/* ============================================ */
+/* 상단 */
+/* ============================================ */
+
+.favorites-header {
+  position: relative;
+
+  margin-bottom: 30px;
+}
+
+
+.favorites-small-title {
+  margin: 0 0 8px;
+
+  color: var(--accent);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.favorites-header h1 {
+  margin: 0;
+
+  color: var(--text-main);
+
+  font-size: 38px;
+
+  font-weight: 900;
+
+  letter-spacing: -1.5px;
+}
+
+
+.favorites-header > p:not(.favorites-small-title) {
+  margin-top: 10px;
+
+  color: var(--text-sub);
+
+  font-size: 14px;
+}
+
+
+.favorites-count {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 17px;
+
+  padding: 7px 12px;
+
+  background: var(--surface-2);
+
+  color: var(--text-muted);
+
+  border: 1px solid var(--line);
+
+  border-radius: 20px;
+
+  font-size: 11px;
+}
+
+
+.favorites-count strong {
+  color: var(--accent);
+
+  font-size: 13px;
+}
+
+
+/* ============================================ */
+/* 영화 */
+/* ============================================ */
+
+.favorites-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(240px, 1fr)
+    );
+
+  gap: 24px;
+}
+
+
+/* ============================================ */
+/* 빈 화면 */
+/* ============================================ */
+
+.favorites-empty {
+  min-height: 330px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 40px;
+
+  background: var(--surface-1);
+
+  border: 1px solid var(--line);
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow);
+}
+
+
+.favorites-heart {
+  margin-bottom: 12px;
+
+  color: var(--accent);
+
+  font-size: 55px;
+}
+
+
+.favorites-empty h2 {
+  margin: 0;
+
+  color: var(--text-main);
+
+  font-size: 20px;
+}
+
+
+.favorites-empty p {
+  margin: 10px 0 0;
+
+  color: var(--text-sub);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* ============================================ */
+/* 메시지 */
+/* ============================================ */
+
+.favorites-message,
+.favorites-error {
+  padding: 80px 20px;
+
+  text-align: center;
+}
+
+
+.favorites-message {
+  color: var(--text-sub);
+}
+
+
+.favorites-error {
+  color: #ff747d;
+}

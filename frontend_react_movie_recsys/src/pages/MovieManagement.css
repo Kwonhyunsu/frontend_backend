@@ -1,0 +1,942 @@
+/* ============================================ */
+/* 전체 */
+/* ============================================ */
+
+.movie-management-page {
+  width: 100%;
+
+  padding: 32px 0 80px;
+
+  color: var(--text-main);
+}
+
+
+/* ============================================ */
+/* 상단 */
+/* ============================================ */
+
+.movie-management-header {
+  margin-bottom: 30px;
+}
+
+
+.movie-management-small-title {
+  margin: 0 0 8px;
+
+  color: var(--accent);
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+
+.movie-management-header h1 {
+  margin: 0;
+
+  color: var(--text-main);
+
+  font-size: 37px;
+
+  font-weight: 900;
+
+  letter-spacing: -1.5px;
+}
+
+
+.movie-management-header > p:last-child {
+  margin: 11px 0 0;
+
+  color: var(--text-sub);
+
+  font-size: 13px;
+}
+
+
+/* ============================================ */
+/* 입력 영역 */
+/* ============================================ */
+
+.movie-form-section {
+  margin-bottom: 45px;
+
+  padding: 25px;
+
+  background: var(--surface-2);
+
+  border: 1px solid var(--line);
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow);
+}
+
+
+.movie-form-section > h2 {
+  margin: 0 0 22px;
+
+  color: var(--text-main);
+
+  font-size: 19px;
+}
+
+
+/* ============================================ */
+/* 폼 */
+/* ============================================ */
+
+.movie-form {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.movie-form-group {
+  min-width: 0;
+}
+
+
+.movie-form-group.full {
+  grid-column:
+    1 / -1;
+}
+
+
+.movie-form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+
+/* ============================================ */
+/* 일반 입력 */
+/* ============================================ */
+
+.movie-form-group input,
+.movie-form-group textarea {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  background: var(--surface-1);
+
+  color: var(--text-main);
+
+  border: 1px solid var(--line);
+
+  border-radius: 9px;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 12px;
+}
+
+
+.movie-form-group input {
+  height: 43px;
+}
+
+
+.movie-form-group textarea {
+  resize: vertical;
+
+  line-height: 1.7;
+}
+
+
+.movie-form-group input::placeholder,
+.movie-form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+
+.movie-form-group input:focus,
+.movie-form-group textarea:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 3px
+    var(--accent-soft);
+}
+
+
+/* ============================================ */
+/* 장르 선택 전체 */
+/* ============================================ */
+
+.genre-form-group {
+  position: relative;
+
+  z-index: 20;
+}
+
+
+/* ============================================ */
+/* 장르 선택 버튼 */
+/* ============================================ */
+
+.genre-selector {
+  width: 100%;
+  min-height: 43px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 10px 13px;
+
+  background: var(--surface-1);
+
+  color: var(--text-main);
+
+  border: 1px solid var(--line);
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+
+.genre-selector:hover {
+  border-color: var(--accent);
+}
+
+
+.genre-selector.open {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 3px
+    var(--accent-soft);
+}
+
+
+/* ============================================ */
+/* 선택된 값 */
+/* ============================================ */
+
+.genre-selector-value {
+  overflow: hidden;
+
+  color: var(--text-main);
+
+  font-size: 12px;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.genre-selector-placeholder {
+  color: var(--text-muted);
+
+  font-size: 12px;
+}
+
+
+/* ============================================ */
+/* 화살표 */
+/* ============================================ */
+
+.genre-arrow {
+  flex-shrink: 0;
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+
+  transition:
+    transform .2s;
+}
+
+
+.genre-arrow.open {
+  transform:
+    rotate(180deg);
+
+  color:
+    var(--accent);
+}
+
+
+/* ============================================ */
+/* 펼쳐지는 장르 메뉴 */
+/* ============================================ */
+
+.genre-menu {
+  position: absolute;
+
+  top: calc(100% + 7px);
+
+  left: 0;
+
+  right: 0;
+
+  z-index: 100;
+
+  padding: 15px;
+
+  background: var(--surface-1);
+
+  border: 1px solid var(--line);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 18px 45px
+    rgba(0, 0, 0, .28);
+}
+
+
+/* ============================================ */
+/* 장르 메뉴 헤더 */
+/* ============================================ */
+
+.genre-menu-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 14px;
+}
+
+
+.genre-menu-header > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.genre-menu-header strong {
+  color: var(--text-main);
+
+  font-size: 12px;
+}
+
+
+.genre-menu-header span {
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+
+/* ============================================ */
+/* 전체 해제 */
+/* ============================================ */
+
+.genre-clear-button {
+  padding: 5px 8px;
+
+  background: transparent;
+
+  color: var(--text-muted);
+
+  border: 1px solid var(--line);
+
+  border-radius: 7px;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+
+.genre-clear-button:hover {
+  color: #ff858d;
+
+  border-color: #ff858d;
+}
+
+
+/* ============================================ */
+/* 장르 버튼들 */
+/* ============================================ */
+
+.genre-option-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.genre-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 7px 10px;
+
+  background: var(--surface-2);
+
+  color: var(--text-sub);
+
+  border: 1px solid var(--line);
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: .15s;
+}
+
+
+.genre-option:hover {
+  color: var(--text-main);
+
+  border-color: var(--accent);
+}
+
+
+/* 선택된 장르 */
+
+.genre-option.selected {
+  background: var(--accent-soft);
+
+  color: var(--accent);
+
+  border-color: var(--accent);
+}
+
+
+.genre-check {
+  font-size: 10px;
+
+  font-weight: 900;
+}
+
+
+/* ============================================ */
+/* 장르 메뉴 아래 */
+/* ============================================ */
+
+.genre-menu-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 15px;
+
+  padding-top: 12px;
+
+  border-top:
+    1px solid var(--line-soft);
+}
+
+
+.genre-menu-footer > span {
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+
+.genre-done-button {
+  padding: 7px 12px;
+
+  background: var(--accent);
+
+  color: #ffffff;
+
+  border: none;
+
+  border-radius: 7px;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+/* ============================================ */
+/* 선택된 장르 칩 */
+/* ============================================ */
+
+.selected-genre-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 8px;
+}
+
+
+.selected-genre-chip {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 5px 8px;
+
+  background: var(--accent-soft);
+
+  color: var(--accent);
+
+  border: 1px solid var(--line);
+
+  border-radius: 20px;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.selected-genre-chip:hover {
+  border-color: var(--accent);
+}
+
+
+.selected-genre-chip span {
+  font-size: 12px;
+
+  line-height: 1;
+}
+
+
+/* ============================================ */
+/* 폼 아래 버튼 */
+/* ============================================ */
+
+.movie-form-buttons {
+  grid-column:
+    1 / -1;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  margin-top: 4px;
+}
+
+
+.movie-cancel-button,
+.movie-save-button {
+  padding: 10px 17px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+.movie-cancel-button {
+  background: var(--surface-1);
+
+  color: var(--text-sub);
+
+  border: 1px solid var(--line);
+}
+
+
+.movie-cancel-button:hover {
+  color: var(--text-main);
+
+  border-color: var(--accent);
+}
+
+
+.movie-save-button {
+  background: var(--accent);
+
+  color: #ffffff;
+
+  border: none;
+}
+
+
+.movie-save-button:disabled {
+  opacity: .6;
+
+  cursor: not-allowed;
+}
+
+
+/* ============================================ */
+/* 영화 목록 제목 */
+/* ============================================ */
+
+.movie-list-title {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 9px;
+
+  margin-bottom: 18px;
+}
+
+
+.movie-list-title h2 {
+  margin: 0;
+
+  color: var(--text-main);
+
+  font-size: 21px;
+}
+
+
+.movie-list-title span {
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+
+/* ============================================ */
+/* 영화 목록 */
+/* ============================================ */
+
+.movie-management-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(310px, 1fr)
+    );
+
+  gap: 18px;
+}
+
+
+/* ============================================ */
+/* 영화 카드 */
+/* ============================================ */
+
+.management-movie-card {
+  display: grid;
+
+  grid-template-columns:
+    120px minmax(0, 1fr);
+
+  overflow: hidden;
+
+  min-height: 220px;
+
+  background: var(--surface-1);
+
+  border: 1px solid var(--line);
+
+  border-radius: 14px;
+
+  box-shadow: var(--shadow);
+}
+
+
+.management-poster-area {
+  width: 120px;
+
+  height: 100%;
+
+  min-height: 220px;
+
+  background: var(--surface-2);
+}
+
+
+.management-poster {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+.management-no-poster {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+
+  text-align: center;
+}
+
+
+/* ============================================ */
+/* 영화 카드 정보 */
+/* ============================================ */
+
+.management-movie-info {
+  min-width: 0;
+
+  padding: 17px;
+}
+
+
+.management-id {
+  color: var(--accent);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.management-movie-info h3 {
+  margin: 6px 0 9px;
+
+  color: var(--text-main);
+
+  font-size: 17px;
+}
+
+
+/* ============================================ */
+/* 영화 목록의 장르 */
+/* ============================================ */
+
+.management-genre-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  margin-bottom: 7px;
+}
+
+
+.management-genre-list span {
+  padding: 4px 7px;
+
+  background: var(--surface-3);
+
+  color: var(--text-sub);
+
+  border: 1px solid var(--line);
+
+  border-radius: 20px;
+
+  font-size: 8px;
+}
+
+
+.management-year {
+  margin: 5px 0;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+
+.management-meta {
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+
+.management-overview {
+  display: -webkit-box;
+
+  margin: 10px 0;
+
+  overflow: hidden;
+
+  color: var(--text-sub);
+
+  font-size: 10px;
+
+  line-height: 1.6;
+
+  -webkit-line-clamp: 3;
+
+  -webkit-box-orient: vertical;
+}
+
+
+.management-popularity {
+  margin: 8px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+
+/* ============================================ */
+/* 수정 / 삭제 */
+/* ============================================ */
+
+.management-buttons {
+  display: flex;
+
+  gap: 7px;
+
+  margin-top: 13px;
+}
+
+
+.management-edit,
+.management-delete {
+  padding: 7px 11px;
+
+  background: var(--surface-2);
+
+  color: var(--text-sub);
+
+  border: 1px solid var(--line);
+
+  border-radius: 7px;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.management-edit:hover {
+  color: var(--accent);
+
+  border-color: var(--accent);
+}
+
+
+.management-delete:hover {
+  color: #ff858d;
+
+  border-color: #ff858d;
+}
+
+
+/* ============================================ */
+/* 메시지 */
+/* ============================================ */
+
+.movie-management-message,
+.movie-management-error {
+  padding: 70px 20px;
+
+  text-align: center;
+}
+
+
+.movie-management-message {
+  color: var(--text-sub);
+}
+
+
+.movie-management-error {
+  color: #ff747d;
+}
+
+
+/* ============================================ */
+/* 모바일 */
+/* ============================================ */
+
+@media (max-width: 700px) {
+
+  .movie-form {
+    grid-template-columns: 1fr;
+  }
+
+
+  .movie-form-group.full,
+  .movie-form-buttons {
+    grid-column: auto;
+  }
+
+
+  .movie-management-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .genre-menu {
+    position: relative;
+
+    top: auto;
+
+    margin-top: 7px;
+  }
+
+}
